@@ -7,8 +7,6 @@
   $char = ["A","B","C","D","E","F","G","H","I","K"];
   
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // var_dump($_POST);
-    // print_r($_POST);
     $html = '<p>Buvo pažymėti '.count($_POST)-1 .' čekboksai.</p>';
     $bgcolor = "white";
     $color = 'black';
@@ -20,9 +18,9 @@
     $color = "white";
     $html ="";
     
-    $start = '<form action="" method="post"><input type="text" name="post_field" id="">';
+    $start = '<form action="" method="post"><input type="text" name="post_field">';
     for ($i=0; $i < $count; $i++) { 
-      $html = $html.'<label for=""><input type="checkbox" name="'.$char[$i].'" id="">'.$char[$i].'</label>';
+      $html = $html.'<label for=""><input type="checkbox" name="'.$char[$i].'">'.$char[$i].'</label>';
     }
     $end = '<button type="submit">SUBMIT</button></form>';
     $html = $start.$html.$end;

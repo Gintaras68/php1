@@ -15,9 +15,9 @@
     echo "Sugeneruotas skaicius: ".$count;
     $bgcolor = "black";
     $color = "white";
-    $html = '<form action="" method="post"><input type="hidden" name="number" value="'.$count.'"><input type="text" name="post_field" id="">';
+    $html = '<form action="" method="post"><input type="hidden" name="number" value="'.$count.'"><input type="text" name="post_field">';
     for ($i=0; $i < $count; $i++) { 
-      $html = $html.'<label for=""><input type="checkbox" name="'.$char[$i].'" id="">'.$char[$i].'</label>';
+      $html = $html.'<label for=""><input type="checkbox" name="'.$char[$i].'">'.$char[$i].'</label>';
     }
     $end = '<button type="submit">SUBMIT</button></form>';
     $html = $html.$end;
