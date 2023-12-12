@@ -5,15 +5,8 @@
 // *  Vienas rodytų kiek buvo pažymėta, o kitas kiek iš vis buvo jų sugeneruota.
 
   $char = ["A","B","C","D","E","F","G","H","I","K"];
-  $count;
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // var_dump($_POST);
-    // print_r($_POST);
-    // ! reikalingas kintamasis, kur saugome kiek elementu buvo
-    // * panaudoti formos tip1  input type="hidden"
-    
-    echo $count;
-    $html = '<p>Buvo pažymėti '.count($_POST)-1 .' čekboksai.</p>';
+    $html = '<p>Buvo pažymėti '.count($_POST)-2 .' čekboksai iš '.$_POST["number"].' .</p>';
     $bgcolor = "white";
     $color = 'black';
     $count = 0;
@@ -22,14 +15,12 @@
     echo "Sugeneruotas skaicius: ".$count;
     $bgcolor = "black";
     $color = "white";
-    $html ="";
-    
-    $start = '<form action="" method="post"><input type="text" name="post_field" id="">';
+    $html = '<form action="" method="post"><input type="hidden" name="number" value="'.$count.'"><input type="text" name="post_field" id="">';
     for ($i=0; $i < $count; $i++) { 
       $html = $html.'<label for=""><input type="checkbox" name="'.$char[$i].'" id="">'.$char[$i].'</label>';
     }
     $end = '<button type="submit">SUBMIT</button></form>';
-    $html = $start.$html.$end;
+    $html = $html.$end;
   }
 ?>
 
