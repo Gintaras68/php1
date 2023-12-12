@@ -6,7 +6,7 @@
 
   $char = ["A","B","C","D","E","F","G","H","I","K"];
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $html = '<p>Buvo pažymėti '.count($_POST)-2 .' čekboksai iš '.$_POST["number"].' .</p>';
+    $html = '<p>Buvo pažymėti '.count($_POST)-1 .' čekboksai iš '.$_POST["number"].' .</p>';
     $bgcolor = "white";
     $color = 'black';
     $count = 0;
@@ -15,7 +15,7 @@
     echo "Sugeneruotas skaicius: ".$count;
     $bgcolor = "black";
     $color = "white";
-    $html = '<form action="" method="post"><input type="hidden" name="number" value="'.$count.'"><input type="text" name="post_field">';
+    $html = '<form action="" method="post"><input type="hidden" name="number" value="'.$count.'">';
     for ($i=0; $i < $count; $i++) { 
       $html = $html.'<label for=""><input type="checkbox" name="'.$char[$i].'">'.$char[$i].'</label>';
     }
