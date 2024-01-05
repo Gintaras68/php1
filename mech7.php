@@ -12,7 +12,7 @@
 ?>
   
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,11 +38,11 @@
     <div class="forms">
       <form action="" method="get">
         <input type="text" name="get_field" id="">
-        <button type="submit">Siunciam su GET</button>
+        <button type="submit">Siunčiam su GET</button>
       </form>
       <form action="" method="post">
         <input type="text" name="post_field" id="">
-        <button type="submit">Siunciam su POST</button>
+        <button type="submit">Siunčiam su POST</button>
       </form>
     </div>
   </body>
