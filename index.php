@@ -161,7 +161,69 @@
   }
 
   echo $string1 . " | " . $string2 . " | " . $string3;
+  echo "<p>";
 ?>
+
+<!-- 8. Įmonė parduoda žvakes po 1 EUR. 
+        Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. 
+        Parašykite programą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. 
+        Žvakių kiekį generuokite ​rand()​ funkcija nuo 5 iki 3000. -->
+<?php
+  $discount = 0;
+  $unitPrice = 1;
+  $candlesAmount = rand(5, 3000);
+  echo "Buvo užsakyta ".$candlesAmount." žvakių.";
+  
+  if ($candlesAmount * $unitPrice > 2000) {
+    $discount = 4;
+    echo " Taikoma ".$discount."% nuolaida. ";
+  } else if ($candlesAmount * $unitPrice > 1000) {
+    $discount = 3;
+    echo " Taikoma ".$discount."% nuolaida. ";
+  } else {
+    echo " Smulkius užsakymas be nuolaidos. ";
+  }
+  $unitPrice -= ($discount / 100);
+
+  echo "Žvakės parduotos po ".$unitPrice." Eur/vnt., kas sudaro ".$unitPrice * $candlesAmount." Eur.";
+  echo "<p>";
+?>
+
+<!-- 9. Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. 
+        Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. 
+        Abu vidurkius atspausdinkite. Rezultatus apvalinkite iki sveiko skaičiaus. -->
+<?php 
+  $randNum1 = rand(0, 100);
+  $randNum2 = rand(0, 100);
+  $randNum3 = rand(0, 100);
+
+  echo "Sugeneruoti skaičiai: ".$randNum1." | ".$randNum2." | ".$randNum3." .";
+  $average = round(($randNum1 + $randNum2 + $randNum3) / 3);
+  echo " Jų aritmetinis vidurkis - ".$average;
+
+  $sum = 0;
+  $counter = 0;
+  if ($randNum1 >= 10 && $randNum1 <= 90) {
+    $sum += $randNum1;
+    $counter ++;
+  } 
+  if ($randNum2 >= 10 && $randNum2 <= 90) {
+    $sum += $randNum2;
+    $counter ++;
+  }
+  if ($randNum3 >= 10 && $randNum3 <= 90) {
+    $sum += $randNum3;
+    $counter ++;
+  }
+  $average = round($sum / $counter);  
+  echo " Atmetus reikšmes, kurios <10 arba >90, gaunams vidurkis bus ".$average;
+  echo "<p>";
+?>
+
+
+
+
+
 
 </body>
 </html>
