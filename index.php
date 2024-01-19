@@ -215,12 +215,69 @@
     $sum += $randNum3;
     $counter ++;
   }
-  $average = round($sum / $counter);  
-  echo " Atmetus reikšmes, kurios <10 arba >90, gaunams vidurkis bus ".$average;
+  
+  if ($counter) {
+    $average = round($sum / $counter);  
+    echo " Atmetus reikšmes, kurios <10 arba >90, gaunams vidurkis bus ".$average;
+  } else {
+    echo "Visos reikšmės ribinės.";
+  }
   echo "<p>";
 ?>
 
+<!-- 10. Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. 
+        Valandom, minutėm ir sekundėm sugeneruoti panaudokite funkciją rand(). 
+        Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės. Skaičių pridėkite prie jau sugeneruoto laiko. 
+        Atspausdinkite laikrodį prieš ir po sekundžių pridėjimo ir pridedamų sekundžių skaičių. -->
+  <?php 
+    $hour = rand(0, 23);
+    $minutes = rand(0, 59);
+    $seconds = rand(0, 59);
+    $randNum = rand(0, 300);
+    $addMinutes;
+    $addSeconds;
+    
+    ($hour < 10) ? $hourString = '0' . $hour : $hourString = $hour;
+    ($minutes < 10) ? $minutesString = '0' . $minutes : $minutesString = $minutes;
+    ($seconds < 10) ? $secondsString = '0' . $seconds : $secondsString = $seconds;
 
+    echo "Sugeneruotas laikas . : " . $hourString . ":" . $minutesString . ":" . $secondsString . "<br>";
+    echo "Papildomos sekundės: " . $randNum . " , o tai sudaro " ;
+
+    if ($randNum > 59) {
+      $addMinutes = floor($randNum / 60);
+      echo $addMinutes . " min. ir ";
+      $addSeconds = $randNum - $addMinutes * 60;
+    } else {
+      $addMinutes = 0;
+      $addSeconds = $randNum;
+    }
+    echo $addSeconds . " sekundes.<br>";
+
+    $minutes += $addMinutes; //  minutės pridėjus
+    $seconds += $addSeconds; //  sekundės pridėjus
+
+    if ($seconds >= 60) {
+      $minutes ++;    //  pridedam minutę
+      $seconds -= 59; //  likutis - sekundės
+    }
+
+    if ($minutes >= 60) {
+      $hour ++;    //  pridedam minutę
+      $minutes -= 59; //  likutis - sekundės
+    }
+
+    if ($hour > 23) {   //  jei 24-a valanda - nulis
+      $hour = 0;
+    }
+
+    ($hour < 10) ? $hourString = '0' . $hour : $hourString = $hour;
+    ($minutes < 10) ? $minutesString = '0' . $minutes : $minutesString = $minutes;
+    ($seconds < 10) ? $secondsString = '0' . $seconds : $secondsString = $seconds;
+
+    echo "Laikas po korekcijos  : " . $hourString . ":" . $minutesString . ":" . $secondsString . "<br>";
+
+  ?>
 
 
 
