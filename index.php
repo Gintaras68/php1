@@ -220,7 +220,7 @@
     $average = round($sum / $counter);  
     echo " Atmetus reikšmes, kurios <10 arba >90, gaunams vidurkis bus ".$average;
   } else {
-    echo "Visos reikšmės ribinės.";
+    echo " Visos reikšmės ribinės.";
   }
   echo "<p>";
 ?>
@@ -275,12 +275,79 @@
     ($minutes < 10) ? $minutesString = '0' . $minutes : $minutesString = $minutes;
     ($seconds < 10) ? $secondsString = '0' . $seconds : $secondsString = $seconds;
 
-    echo "Laikas po korekcijos  : " . $hourString . ":" . $minutesString . ":" . $secondsString . "<br>";
+    echo "Laikas po korekcijos  : " . $hourString . ":" . $minutesString . ":" . $secondsString . "<p>";
 
   ?>
 
+<!-- 11. Naudokite funkcija rand(). Sugeneruokite 6 kintamuosius su atsitiktinem reikšmėm nuo 1000 iki 9999. 
+        Atspausdinkite reikšmes viename strige, išrūšiuotas nuo didžiausios iki mažiausios, atskirtas tarpais. 
+        Naudoti ciklų ir masyvų NEGALIMA. -->
+  <?php 
+    $randNum1 = rand(1000, 9999);
+    $randNum2 = rand(1000, 9999);
+    $randNum3 = rand(1000, 9999);
+    $randNum4 = rand(1000, 9999);
+    $randNum5 = rand(1000, 9999);
+    $randNum6 = rand(1000, 9999);
 
+    echo "Buvo sugeneruoti skaičiai: ".$randNum1." | ".$randNum2." | ".$randNum3." | ".$randNum4." | ".$randNum5." | ".$randNum6."<br>";
 
+    $num = 0;
+    if ($randNum1 > $num) {$num =  $randNum1;}
+    if ($randNum2 > $num) {$num =  $randNum2;}
+    if ($randNum3 > $num) {$num =  $randNum3;}
+    if ($randNum4 > $num) {$num =  $randNum4;}
+    if ($randNum5 > $num) {$num =  $randNum5;}
+    if ($randNum6 > $num) {$num =  $randNum6;}
+    $num1 = $num;
+    
+    $num = 0;
+    if ($randNum1 < $num1 && $randNum1 > $num) {$num =  $randNum1;}
+    if ($randNum2 < $num1 && $randNum2 > $num) {$num =  $randNum2;}
+    if ($randNum3 < $num1 && $randNum3 > $num) {$num =  $randNum3;}
+    if ($randNum4 < $num1 && $randNum4 > $num) {$num =  $randNum4;}
+    if ($randNum5 < $num1 && $randNum5 > $num) {$num =  $randNum5;}
+    if ($randNum6 < $num1 && $randNum6 > $num) {$num =  $randNum6;}
+    $num2 = $num;
+
+    $num = 0;
+    if ($randNum1 < $num2 && $randNum1 > $num) {$num =  $randNum1;}
+    if ($randNum2 < $num2 && $randNum2 > $num) {$num =  $randNum2;}
+    if ($randNum3 < $num2 && $randNum3 > $num) {$num =  $randNum3;}
+    if ($randNum4 < $num2 && $randNum4 > $num) {$num =  $randNum4;}
+    if ($randNum5 < $num2 && $randNum5 > $num) {$num =  $randNum5;}
+    if ($randNum6 < $num2 && $randNum6 > $num) {$num =  $randNum6;}
+    $num3 = $num;
+
+    $num = 0;
+    if ($randNum1 < $num3 && $randNum1 > $num) {$num =  $randNum1;}
+    if ($randNum2 < $num3 && $randNum2 > $num) {$num =  $randNum2;}
+    if ($randNum3 < $num3 && $randNum3 > $num) {$num =  $randNum3;}
+    if ($randNum4 < $num3 && $randNum4 > $num) {$num =  $randNum4;}
+    if ($randNum5 < $num3 && $randNum5 > $num) {$num =  $randNum5;}
+    if ($randNum6 < $num3 && $randNum6 > $num) {$num =  $randNum6;}
+    $num4 = $num;
+
+    $num = 0;
+    if ($randNum1 < $num4 && $randNum1 > $num) {$num =  $randNum1;}
+    if ($randNum2 < $num4 && $randNum2 > $num) {$num =  $randNum2;}
+    if ($randNum3 < $num4 && $randNum3 > $num) {$num =  $randNum3;}
+    if ($randNum4 < $num4 && $randNum4 > $num) {$num =  $randNum4;}
+    if ($randNum5 < $num4 && $randNum5 > $num) {$num =  $randNum5;}
+    if ($randNum6 < $num4 && $randNum6 > $num) {$num =  $randNum6;}
+    $num5 = $num;
+
+    $num = 0;
+    if ($randNum1 < $num5 && $randNum1 > $num) {$num =  $randNum1;}
+    if ($randNum2 < $num5 && $randNum2 > $num) {$num =  $randNum2;}
+    if ($randNum3 < $num5 && $randNum3 > $num) {$num =  $randNum3;}
+    if ($randNum4 < $num5 && $randNum4 > $num) {$num =  $randNum4;}
+    if ($randNum5 < $num5 && $randNum5 > $num) {$num =  $randNum5;}
+    if ($randNum6 < $num5 && $randNum6 > $num) {$num =  $randNum6;}
+    $num6 = $num;
+    $numberString = $num1." ".$num2." ".$num3." ".$num4." ".$num5." ".$num6;
+    echo "Pradedam nuo didžiausio : ".$numberString;
+  ?>
 
 </body>
 </html>
