@@ -9,7 +9,7 @@
   
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {      //*  jei jau žaidžiame ....
     $login = "";            //*  <----  prasidėjus žaidimui šios formos nebereikia
-    $one = $_POST['one'];
+    $one = $_POST['first'];
     $two = $_POST['two'];
     $oneTotal = $_POST['oneTotal'];
     $twoTotal = $_POST['twoTotal'];
@@ -31,8 +31,8 @@
     // *  naujo žaidimo atveju įeinama su GET - reikai suvesti žaidėjus
     $login = '<h1>Žaidėjų registracija</h1>
               <form action="" method="post">
-                <input type="text" name="one" placeholder="Įveskite savo vardą" required>
-                <input type="text" name="two" placeholder="Įveskite savo vardą" required>
+              <input type="text" name="first" placeholder="Įveskite savo vardą" required>
+              <input type="text" name="two" placeholder="Įveskite savo vardą" required>
                 <input type="hidden" name="active" value="">
                 <input type="hidden" name="score" value="">
                 <input type="hidden" name="oneTotal" value="0">
@@ -78,7 +78,7 @@
           <?php if ($oneTotal < 30 && $twoTotal < 30) { ?> 
             <h2><?= $active ?></h2>
             <form class="walking" action="" method="post">
-              <input type="hidden" name="one" value="<?= $one ?>">
+              <input type="hidden" name="first" value="<?= $one ?>">
               <input type="hidden" name="two" value="<?= $two ?>">
               <input type="hidden" name="oneTotal" value="<?= $oneTotal ?>">
               <input type="hidden" name="twoTotal" value="<?= $twoTotal ?>">

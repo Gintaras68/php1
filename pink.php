@@ -31,7 +31,7 @@
 <body style="background-color: pink;">
   
   <form action="rose.php" method="post">
-    <input type="text" name="post_field" id="">
+    <!-- <input type="text" name="post_field" id=""> -->
     <button type="submit">GO TO ROSE</button>
   </form>
 

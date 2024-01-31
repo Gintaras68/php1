@@ -1,8 +1,7 @@
 <?php
-// *  Padarykite puslapį su dviem mygtukais. Mygtukus įdėkite į dvi skirtingas formas- vieną GET ir kitą POST. 
-// *  Nenaudodami jokių konkrečių $_GET ar $_POST reikšmių, o tik tikrindami pačius masyvus, nuspalvinkite foną žaliai, 
-// *  kai paspaustas mygtukas iš GET formos ir geltonai- kai iš POST.
-// todo reikės perdaryti kad tikrintų ne kreipimosi metodą, o pačius kintamuosius  GET ir POST (jų ilgį ar buvimą)
+// *  Padarykite puslapį su dviem mygtukais. Mygtukus įdėkite į dvi skirtingas formas- vieną GET , o kitą - POST. 
+// *  Nenaudodami jokių konkrečių $_GET ar $_POST reikšmių, o tik tikrindami pačius masyvus,  
+// *  nuspalvinkite foną žaliai, kai paspaustas mygtukas iš GET formos ir geltonai- kai iš POST.
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $color = 'yellow';

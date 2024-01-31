@@ -7,20 +7,21 @@
   $char = ["A","B","C","D","E","F","G","H","I","K"];
   
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $html = '<p>Buvo pažymėti '.count($_POST).' čekboksai.</p>';
+    $html = '<p>Buvo pažymėti '.count($_POST).' čekboksai.</p>'.
+            '<a href="">Iš naujo</a>';
     $bgcolor = "white";
     $color = 'black';
-    $count = 0;
   } else {
-    $count = rand(3, 10);
-    echo "Sugeneruotas skaicius: ".$count;
+    //** atėjus su GET - generuojame forme formą */
+    $boxQuantity = rand(3, 10);
+    echo "Sugeneruotas skaicius: ".$boxQuantity;
     $bgcolor = "black";
     $color = "white";
     $html ="";
     
     $start = '<form action="" method="post">';
-    for ($i=0; $i < $count; $i++) { 
-      $html = $html.'<label for=""><input type="checkbox" name="'.$char[$i].'">'.$char[$i].'</label>';
+    for ($i=0; $i < $boxQuantity; $i++) { 
+      $html = $html.'<label><input type="checkbox" name="'.$char[$i].'">'.$char[$i].'</label>';
     }
     $end = '<button type="submit">SUBMIT</button></form>';
     $html = $start.$html.$end;

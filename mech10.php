@@ -6,18 +6,19 @@
 
   $char = ["A","B","C","D","E","F","G","H","I","K"];
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $html = '<p>Buvo pažymėti '.count($_POST)-1 .' čekboksai iš '.$_POST["number"].' .</p>';
+    $html = '<p>Buvo pažymėti '.count($_POST)-1 .' čekboksai iš '.$_POST["number"].' .</p>'.
+            '<a href="">Iš naujo</a>';
     $bgcolor = "white";
     $color = 'black';
-    $count = 0;
   } else {
-    $count = rand(3, 10);
-    echo "Sugeneruotas skaicius: ".$count;
+    // ** užėjus pirmą kartą (su GET) - generuojame formą su jungikliais
+    $boxQuantity = rand(3, 10);
+    echo "Sugeneruotas skaicius: ".$boxQuantity;
     $bgcolor = "black";
     $color = "white";
-    $html = '<form action="" method="post"><input type="hidden" name="number" value="'.$count.'">';
-    for ($i=0; $i < $count; $i++) { 
-      $html = $html.'<label for=""><input type="checkbox" name="'.$char[$i].'">'.$char[$i].'</label>';
+    $html = '<form action="" method="post"><input type="hidden" name="number" value="'.$boxQuantity.'">';
+    for ($i=0; $i < $boxQuantity; $i++) { 
+      $html = $html.'<label><input type="checkbox" name="'.$char[$i].'">'.$char[$i].'</label>';
     }
     $end = '<button type="submit">SUBMIT</button></form>';
     $html = $html.$end;

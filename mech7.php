@@ -3,7 +3,7 @@
 // *  Papildykite jį kodu, kuris naršyklę po POST metodo peradresuotų tuo pačiu adresu (t.y. į patį save) jau GET metodu.
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header("Location: ./mech7.php?post_field=".$_POST["post_field"]);
+    header("Location: ./mech7.php");
     $color = 'yellow';
     die;
   } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -37,11 +37,9 @@
   
     <div class="forms">
       <form action="" method="get">
-        <input type="text" name="get_field" id="">
         <button type="submit">Siunčiam su GET</button>
       </form>
       <form action="" method="post">
-        <input type="text" name="post_field" id="">
         <button type="submit">Siunčiam su POST</button>
       </form>
     </div>
